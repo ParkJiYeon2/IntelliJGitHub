@@ -12,6 +12,7 @@ public class _25404 {
         for (int i = 0; i < totalNum; i++) {
             price = sc.nextInt();
             num = sc.nextInt();
+            //tempPrice 변수 사용 없이, total 값에서 물품 가격을 제외시키고 남은 값이 0일 때, "Yes"를 출력시키게 하는 방법이 더 간결
             tempPrice = tempPrice + (price * num);
         }
         if (tempPrice == total){
