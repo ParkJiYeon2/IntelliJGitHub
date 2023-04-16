@@ -4,21 +4,21 @@ import java.util.Scanner;
 
 public class _1546 {
     public static void main(String[] args) {
+        //https://st-lab.tistory.com/47 double
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int max = 0;
-        int mins = 0;
-        int totla = 0;
-        int[] arr = new int[n];
-        for (int i = 0; i <n; i++) {
-            arr[i] = sc.nextInt();
+        double max = 0;
+        double mins = 0;
+        double totla = 0;
+        double[] arr = new double[sc.nextInt()]; // 배열의 개수를 입력할 때 []안에 scanner를 집어넣으면 더 간략.
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextDouble();
         }
-            for (int num : arr) {
+            for (double num : arr) {
                 if (num > max){
                     max = num;
                 }
         }
-        for (int num : arr) {
+        for (double num : arr) {
             if (num == max){
 
             }

@@ -1,37 +1,42 @@
 package codingStudy.yeon.chapter4;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 
     public class _10811 {
+        //바구니 n개 바구니 시작 번호 1 , 바구니 순서를 m번 역순으로 바꿈
+        //2개 바구니 순서를 바꿈 a, b
 
-        public static void main(String[] args) throws IOException {
+        public static void main(String[] args)  {
             Scanner sc = new Scanner(System.in);
 
-            int[] arr = new int[sc.nextInt()];
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = i + 1;
-            }
-
             int N = sc.nextInt();
+            int M = sc.nextInt();
+
+            int[] arr = new int[N];
             for (int i = 0; i < N; i++) {
-                int order1 = sc.nextInt() - 1;
-                int order2 = sc.nextInt() - 1;
+                arr[i] = i+1;
+                System.out.print(arr[i]);
+            }
 
-                while (order1 < order2) {
-                    int temp = arr[order1];
-                    arr[order1++] = arr[order2];
-                    arr[order2--] = temp;
+            for (int i = 0; i < M; i++) {
+                int a = sc.nextInt()-1;
+                int b = sc.nextInt()-1;
+
+                //역순으로 바꾸기 위해 숫자 앞뒤를 바꿈
+                while (a < b) {
+                    int temp = arr[a];
+                    arr[a] = arr[b];
+                    arr[b] = temp;
+                    a++;
+                    b--;
                 }
+            }
+            for (int i = 0; i < N; i++) {
+                System.out.print(arr[i]+" ");
 
             }
-            String ret = "";
-            for (int j = 0; j < arr.length; j++) {
-                ret += arr[j] + " ";
-            }
-            System.out.print(ret.trim());
-            sc.close();
+
         }
     }
 
