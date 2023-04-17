@@ -16,7 +16,6 @@ import java.util.Scanner;
             int[] arr = new int[N];
             for (int i = 0; i < N; i++) {
                 arr[i] = i+1;
-                System.out.print(arr[i]);
             }
 
             for (int i = 0; i < M; i++) {
@@ -24,6 +23,7 @@ import java.util.Scanner;
                 int b = sc.nextInt()-1;
 
                 //역순으로 바꾸기 위해 숫자 앞뒤를 바꿈
+                //역순으로 바꾸기 위해서 a와 b를 바꾸고 a+1과 b-1을 바꾼다는 개념
                 while (a < b) {
                     int temp = arr[a];
                     arr[a] = arr[b];
